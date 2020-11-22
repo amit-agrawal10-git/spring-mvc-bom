@@ -32,7 +32,7 @@ jobs:
             - run:
                   name: Install Dependency
                   command: >-
-                      mvc clean install
+                      mvn clean install ~/spring-base-bom
 
             # Download and cache dependencies
             - restore_cache:
