@@ -22,6 +22,12 @@ jobs:
 
         steps:
             - checkout
+            - attach_workspace:
+                  at: ~/spring-base-bom
+            - run:
+                  name: Clone Base Bom Repo
+                  command: >-
+                      git clone https://github.com/amit-agrawal10-git/spring-base-bom.git ~/spring-base-bom
 
             # Download and cache dependencies
             - restore_cache:
