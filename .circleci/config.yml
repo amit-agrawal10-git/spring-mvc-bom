@@ -28,7 +28,10 @@ jobs:
                   name: Clone Base Bom Repo
                   command: >-
                       git clone https://github.com/amit-agrawal10-git/spring-base-bom.git ~/spring-base-bom
-                      cd ~/spring-base-bom
+
+            - run:
+                  name: Install Dependency
+                  command: >-
                       mvc clean install
 
             # Download and cache dependencies
