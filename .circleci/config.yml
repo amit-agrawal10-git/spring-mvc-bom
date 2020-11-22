@@ -25,9 +25,7 @@ jobs:
             - attach_workspace:
                   at: ~/spring-base-bom
             - run: git clone https://github.com/amit-agrawal10-git/spring-base-bom.git ~/spring-base-bom
-            - run: cd ~/spring-base-bom
-            - run: mvn clean install
-            - run: cd -
+            - run: mvn -f ~/spring-base-bom clean install
 
             # Download and cache dependencies
             - restore_cache:
