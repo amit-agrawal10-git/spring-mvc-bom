@@ -24,15 +24,10 @@ jobs:
             - checkout
             - attach_workspace:
                   at: ~/spring-base-bom
-            - run:
-                  name: Clone Base Bom Repo
-                  command: >-
-                      git clone https://github.com/amit-agrawal10-git/spring-base-bom.git ~/spring-base-bom
-
-            - run:
-                  name: Install Dependency
-                  command: >-
-                      mvn clean install ~/spring-base-bom
+            - run: git clone https://github.com/amit-agrawal10-git/spring-base-bom.git ~/spring-base-bom
+            - run: cd ~/spring-base-bom
+            - run: mvn clean install
+            - run: cd -
 
             # Download and cache dependencies
             - restore_cache:
